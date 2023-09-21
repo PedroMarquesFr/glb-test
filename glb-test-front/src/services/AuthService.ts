@@ -1,6 +1,6 @@
 // AuthService.ts
 
-import axios, { AxiosResponse, AxiosError } from 'axios';
+import { AxiosResponse, AxiosError } from 'axios';
 import api, { ApiResponse } from './api';
 
 // Define a TypeScript interface for the response data structure

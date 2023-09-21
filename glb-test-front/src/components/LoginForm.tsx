@@ -17,6 +17,7 @@ import { toast } from "@/components/ui/use-toast";
 import { useNavigate } from "react-router-dom";
 import AuthService from "@/services/AuthService";
 import CookieService, { Person } from "@/services/CookieService";
+import { useUserContext } from "@/contexts/UserContext";
 
 const FormSchema = z.object({
   email: z.string().email({
@@ -29,27 +30,13 @@ const FormSchema = z.object({
 
 export default function LoginForm() {
   let navigate = useNavigate();
+  const userContext = useUserContext();
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
   });
 
   async function onSubmit(data: z.infer<typeof FormSchema>) {
-    const result = await AuthService.login(data);
-    if (result?.code) {
-      return toast({
-        title: "An error accurred:",
-        description: result.message,
-      });
-    }
-    console.log(result)
-
-    toast({
-      title: "Success:",
-      description: "You are logged in!",
-    });
-    CookieService.setPerson(result.user);
-    CookieService.setToken(result.token);
-    navigate("/");
+    await userContext.logIn(data);
   }
 
   return (

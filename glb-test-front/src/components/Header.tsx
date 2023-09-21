@@ -9,12 +9,14 @@ import {
 import { User, LogOut } from "lucide-react";
 import CookieService from "@/services/CookieService";
 import { useNavigate } from "react-router-dom";
+import { useUserContext } from "@/contexts/UserContext";
 
 // import { Container } from './styles';
 
 const Header: React.FC = () => {
   let navigate = useNavigate();
-  const user = CookieService.getPerson();
+  const userContext = useUserContext();
+  const user = userContext.getUser();
   return (
     <section className="flex justify-between items-center px-20 py-2 border-b border-silver-300">
       <p className=" font-semibold">GLB Manager</p>
@@ -25,10 +27,7 @@ const Header: React.FC = () => {
           </MenubarTrigger>
           <MenubarContent>
             <MenubarItem
-              onClick={() => {
-                CookieService.clearCookies();
-                navigate("/login");
-              }}
+              onClick={userContext.logOut}
             >
               <LogOut className="mr-2 h-4 w-4" />
               Log Out
