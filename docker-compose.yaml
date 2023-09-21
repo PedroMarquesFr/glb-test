@@ -1,0 +1,33 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:14.1-alpine
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - '5432:5432'
+    volumes: 
+      - db:/var/lib/postgresql/data
+  api:
+    build:
+      context: ./glb-test-back  # O caminho para o diretório do seu projeto Node.js
+    restart: always
+    ports:
+      - "3001:3001"  # Mapeie a porta da aplicação (3000 no contêiner) para uma porta no host
+    volumes:
+      - ./glb-test-back:/app  # Monte o diretório do projeto no contêiner
+  web:
+    build:
+      context: ./glb-test-front  # Path to the web project folder
+    restart: always
+    ports:
+      - '5173:5173'  # Adjust the port as needed
+    depends_on:
+      - api  # Ensure the web service depends on the 'api' service
+    volumes:
+      - ./glb-test-front:/app  # Monte o diretório do projeto no contêiner
+volumes:
+  db:
+    driver: local
