@@ -24,6 +24,11 @@ class CookieService {
   static getToken(): string | undefined {
     return Cookies.get('token');
   }
+
+  static clearCookies(): void {
+    Cookies.remove('token');
+    Cookies.get('person');
+  }
 }
 
 export default CookieService;
