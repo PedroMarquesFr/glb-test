@@ -17,6 +17,7 @@ import { Input } from "@/components/ui/input";
 import { toast } from "@/components/ui/use-toast";
 import { useNavigate } from "react-router-dom";
 import AuthService from "@/services/AuthService";
+import { UserPlus } from "lucide-react";
 
 const FormSchema = z.object({
   displayName: z.string().min(4, {
@@ -73,7 +74,7 @@ export default function RegisterForm() {
                 />
               </FormControl>
               <FormDescription>
-              You can enter a longer name with at least 4 characters.
+                You can enter a longer name with at least 4 characters.
               </FormDescription>
               <FormMessage />
             </FormItem>
@@ -114,7 +115,7 @@ export default function RegisterForm() {
                 />
               </FormControl>
               <FormDescription>
-              You can enter a longer password with at least 8 characters.
+                You can enter a longer password with at least 8 characters.
               </FormDescription>
               <FormMessage />
             </FormItem>
@@ -122,6 +123,7 @@ export default function RegisterForm() {
         />
         <div className="flex flex-col">
           <Button type="submit" className="mb-2 max-w-md">
+            <UserPlus className="mr-2 h-4 w-4" />
             Register
           </Button>
         </div>

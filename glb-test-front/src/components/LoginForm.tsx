@@ -18,10 +18,12 @@ import { useNavigate } from "react-router-dom";
 import AuthService from "@/services/AuthService";
 import CookieService, { Person } from "@/services/CookieService";
 import { useUserContext } from "@/contexts/UserContext";
+import { LogIn, UserPlus } from "lucide-react";
 
 const FormSchema = z.object({
   email: z.string().email({
-    message: "Please double-check your email address to make sure it's entered correctly.",
+    message:
+      "Please double-check your email address to make sure it's entered correctly.",
   }),
   password: z.string().min(8, {
     message: "Please enter a Password with at least 8 characters",
@@ -81,9 +83,14 @@ export default function LoginForm() {
         />
         <div className="flex flex-col">
           <Button type="submit" className="mb-2 max-w-md">
-            Login
+            <LogIn className="mr-2 h-4 w-4" /> Login
           </Button>
-          <Button variant="outline" className="max-w-md" onClick={()=> navigate("/register")}>
+          <Button
+            variant="outline"
+            className="max-w-md"
+            onClick={() => navigate("/register")}
+          >
+            <UserPlus className="mr-2 h-4 w-4"/>
             Register
           </Button>
         </div>

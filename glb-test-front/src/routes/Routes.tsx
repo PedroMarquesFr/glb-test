@@ -29,7 +29,7 @@ function RouterComponent() {
               <Route path="*" element={<NotFound />} />
             </Routes>
 
-            <section className="bg-white absolute bottom-0  py-2">
+            <section className="bg-transparent absolute bottom-0 w-full py-2">
               <p className="text-slate-600 text-xs font-medium text-center">
                 Made with ❤️ by Pedro Marques
               </p>

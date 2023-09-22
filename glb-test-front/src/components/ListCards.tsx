@@ -69,7 +69,7 @@ const ListCards: React.FC = () => {
           </AlertDialogContent>
         </AlertDialog>
       </CardTitle>
-      <section className="flex flex-wrap  gap-4 px-20">
+      <section className="flex flex-wrap  gap-4 px-20 pb-10">
         {isLoading && <p>loading...</p>}
         {files.map((file, index) => (
           <CardGLB glbFIle={file} key={index} />
