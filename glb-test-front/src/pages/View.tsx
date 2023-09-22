@@ -21,7 +21,7 @@ const View: React.FC = () => {
     (file) => file.id == parseInt(documentKey as string)
   );
   if (!documentKey) {
-    <section>file id not found</section>;
+    return <section>file id not found</section>;
   }
   return (
     <section className="">
@@ -32,13 +32,18 @@ const View: React.FC = () => {
           <h1 className="text-lg font-semibold">File Details</h1>
           <FileInfo title="Name" value={selectedFile?.name} />
           <FileInfo title="Key" value={selectedFile?.key} />
-          <FileInfo title="Size" value={`${selectedFile?.size / 1000}KB`} />
+          {selectedFile?.size && (
+            <FileInfo title="Size" value={`${selectedFile?.size / 1000}KB`} />
+          )}
           <FileInfo title="Owner Email" value={selectedFile?.user?.email} />
-          <FileInfo title="Owner Name" value={selectedFile?.user?.displayName} />
+          <FileInfo
+            title="Owner Name"
+            value={selectedFile?.user?.displayName}
+          />
           <FileInfo title="Url" value={selectedFile?.url} />
           <FileInfo title="Published Date" value={selectedFile?.published} />
           <FileInfo title="Updated Date" value={selectedFile?.updated} />
-          <FileInfo title="File Id" value={selectedFile?.id} />
+          <FileInfo title="File Id" value={selectedFile?.id.toString()} />
         </aside>
       </section>
     </section>
