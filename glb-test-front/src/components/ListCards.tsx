@@ -16,7 +16,7 @@ import {
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+import NoFilesIlustration from "../assets/undraw_searching_re_3ra9.svg";
 
 const ListCards: React.FC = () => {
   const { fetchFiles, addFile, files, isLoading } = useFileContext();
@@ -62,18 +62,36 @@ const ListCards: React.FC = () => {
             </AlertDialogHeader>
             <AlertDialogFooter>
               <AlertDialogCancel>Cancel</AlertDialogCancel>
-              <AlertDialogAction onClick={() => addFile(selectedFile as File)}>
+              <AlertDialogAction
+                onClick={async() => {
+                  await addFile(selectedFile as File);
+                  await fetchFiles();
+                }}
+              >
                 Add File
               </AlertDialogAction>
             </AlertDialogFooter>
           </AlertDialogContent>
         </AlertDialog>
       </CardTitle>
-      <section className="flex flex-wrap  gap-4 px-20 pb-10">
+      <section className="flex flex-wrap gap-4 px-20 pb-10">
         {isLoading && <p>loading...</p>}
         {files.map((file, index) => (
           <CardGLB glbFIle={file} key={index} />
         ))}
+        {files.length === 0 && (
+          <section className="flex flex-col  justify-center items-center w-full h-[70vh]">
+            <img
+              src={NoFilesIlustration}
+              alt="No Files Illustration"
+              className="w-60 h-60"
+            />
+            <p className="mt-4 font-semibold">
+              You don't have any files yet. You can add your first one using the
+              button above
+            </p>
+          </section>
+        )}
       </section>
     </section>
   );

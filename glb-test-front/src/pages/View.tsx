@@ -7,9 +7,9 @@ const FileInfo: React.FC<{ title: string; value: string | undefined }> = (
   props
 ) => {
   return (
-    <section className="py-4 flex justify-between border-b border-silver-300">
+    <section className="py-4 ">
       <h3 className="text-sm font-semibold">{props.title}</h3>
-      <p className="text-xs text-slate-600 text-right">{props.value}</p>
+      <p className="text-xs text-slate-600 ">{props.value}</p>
     </section>
   );
 };
@@ -42,7 +42,6 @@ const View: React.FC = () => {
           />
           <FileInfo title="Url" value={selectedFile?.url} />
           <FileInfo title="Published Date" value={selectedFile?.published} />
-          <FileInfo title="Updated Date" value={selectedFile?.updated} />
           <FileInfo title="File Id" value={selectedFile?.id.toString()} />
         </aside>
       </section>

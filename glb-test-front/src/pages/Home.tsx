@@ -6,7 +6,7 @@ import React from "react";
 
 const Home: React.FC = () => {
   return (
-    <div className="">
+    <div className="mb-20">
       <Header />
       <ListCards />
     </div>
