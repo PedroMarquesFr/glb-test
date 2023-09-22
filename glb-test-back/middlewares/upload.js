@@ -1,23 +1,28 @@
-const util = require("util");
-const multer = require("multer");
-const crypto = require("crypto");
+const util = require('util');
+const multer = require('multer');
+const crypto = require('crypto');
 
 let storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, "uploads/");
+    cb(null, 'uploads/');
   },
   filename: (req, file, cb) => {
     crypto.randomBytes(16, (err, hash) => {
-      if(err) cb(err);
-      const fileName = `${hash.toString('hex')}-${file.originalname}`
+      if (err) cb(err);
+      const fileName = `${hash.toString('hex')}-${file.originalname}`;
       cb(null, fileName);
-    })
+    });
   },
 });
 
 // Filter to accept only GLB files
 const fileFilter = (req, file, cb) => {
-  if (file.mimetype === 'model/gltf-binary' && file.originalname.endsWith('.glb')) {
+  console.log('ASDKJASDASDM,H', file);
+  if (
+    (file.mimetype === 'model/gltf-binary' ||
+      file.mimetype === 'application/octet-stream') &&
+    file.originalname.endsWith('.glb')
+  ) {
     cb(null, true);
   } else {
     cb(new Error('Invalid file type. Only GLB files are allowed.'), false);

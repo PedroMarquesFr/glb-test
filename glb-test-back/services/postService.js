@@ -46,6 +46,7 @@ const getPostsByUser = async (userId) => {
       include: [
         { model: Users, as: 'user', attributes: { exclude: ['password'] } },
       ],
+      order: [['updated', 'DESC']]
     });
     return allPosts;
   } catch (error) {

@@ -2,6 +2,7 @@ const postService = require('../services/postService');
 const uploadFileMiddleware = require("../middlewares/upload");
 
 const newPost = async (req, res) => {
+  console.log("CHEGOU")
   const { id } = req.user;
   const {originalname: name, size, filename: key } = req.file
   const postOrError = await postService.newPost(id, name, size, key);

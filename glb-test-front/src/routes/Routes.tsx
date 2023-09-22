@@ -11,28 +11,31 @@ import ProtectedRoute from "./ProtectedRoute";
 import Login from "@/pages/Login";
 import Register from "@/pages/Register";
 import { UserProvider } from "@/contexts/UserContext";
+import { FileProvider } from "@/contexts/FileContext";
 
 function RouterComponent() {
   return (
     <Router>
       <UserProvider>
-        <main className="static">
-          <Routes>
-            <Route element={<ProtectedRoute />}>
-              <Route path="/" element={<Home />} />
-              <Route path="/view/:documentKey" element={<View />} />
-            </Route>
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
+        <FileProvider>
+          <main className="relative">
+            <Routes>
+              <Route element={<ProtectedRoute />}>
+                <Route path="/" element={<Home />} />
+                <Route path="/view/:documentKey" element={<View />} />
+              </Route>
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
 
-          <section className="bg-white absolute bottom-0 w-screen py-2">
-            <p className="text-slate-600 text-xs font-medium text-center">
-              Made with ❤️ by Pedro
-            </p>
-          </section>
-        </main>
+            <section className="bg-white absolute bottom-0  py-2">
+              <p className="text-slate-600 text-xs font-medium text-center">
+                Made with ❤️ by Pedro Marques
+              </p>
+            </section>
+          </main>
+        </FileProvider>
       </UserProvider>
     </Router>
   );

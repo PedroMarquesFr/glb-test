@@ -1,4 +1,5 @@
 import Header from "@/components/Header";
+import ListCards from "@/components/ListCards";
 import React from "react";
 
 // import { Container } from './styles';
@@ -6,7 +7,8 @@ import React from "react";
 const Home: React.FC = () => {
   return (
     <div className="">
-      <Header /> Home
+      <Header />
+      <ListCards />
     </div>
   );
 };

@@ -14,18 +14,23 @@ type Props = {
 };
 
 const CardGLB: React.FC<Props> = (props) => {
+  const maxLength = 30;
+  const {
+    glbFIle: { name, url, size },
+  } = props;
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Card Title</CardTitle>
-        <CardDescription>Card Description</CardDescription>
+        <iframe
+          width="250"
+          height="200"
+          src={url}
+          className="rounded-sm"
+        ></iframe>
+        <CardTitle className="text-base cursor-pointer">{name.length > maxLength?`${name.slice(0, maxLength - 3)}...`:name}</CardTitle>
+        <CardDescription>{size/1000}KB</CardDescription>
+        <section></section>
       </CardHeader>
-      <CardContent>
-        <p>Card Content</p>
-      </CardContent>
-      <CardFooter>
-        <p>Card Footer</p>
-      </CardFooter>
     </Card>
   );
 };
