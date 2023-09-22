@@ -7,6 +7,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { useNavigate } from "react-router-dom";
 
 // import { Container } from './styles';
 type Props = {
@@ -14,9 +15,10 @@ type Props = {
 };
 
 const CardGLB: React.FC<Props> = (props) => {
+  let navigate = useNavigate();
   const maxLength = 30;
   const {
-    glbFIle: { name, url, size },
+    glbFIle: { name, url, size, id },
   } = props;
   return (
     <Card>
@@ -27,9 +29,14 @@ const CardGLB: React.FC<Props> = (props) => {
           src={url}
           className="rounded-sm"
         ></iframe>
-        <CardTitle className="text-base cursor-pointer">{name.length > maxLength?`${name.slice(0, maxLength - 3)}...`:name}</CardTitle>
-        <CardDescription>{size/1000}KB</CardDescription>
-        <section></section>
+        <section onClick={() => navigate(`/view/${id}`)} className="cursor-pointer hover:underline underline-offset-3">
+          <CardTitle className="text-base">
+            {name.length > maxLength
+              ? `${name.slice(0, maxLength - 3)}...`
+              : name}
+          </CardTitle>
+          <CardDescription>{size / 1000}KB</CardDescription>
+        </section>
       </CardHeader>
     </Card>
   );

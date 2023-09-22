@@ -20,7 +20,7 @@ const Header: React.FC = () => {
   const user = userContext.getUser();
   return (
     <section className="flex justify-between items-center px-20 py-2 border-b border-silver-300">
-      <p className="font-semibold flex justify-center">
+      <p className="font-semibold flex justify-center cursor-pointer" onClick={() => {navigate("/")}}>
         <Sticker className="mr-1" />
         GLB Manager
       </p>
