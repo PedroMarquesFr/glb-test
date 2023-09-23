@@ -40,24 +40,12 @@ Antes de começar, certifique-se de que você tenha os seguintes pré-requisitos
 1. Clone este repositório:
 
    ```bash
-   git clone https://github.com/seu-nome-de-usuario/GLB-Manager.git
+   git clone https://github.com/PedroMarquesFr/glb-test.git
    ```
 
-2. Abra o Visual Studio Code (VSCode) no diretório do projeto:
+2. Configure a API:
 
-   ```bash
-   code .
-   ```
-
-3. No VSCode, abra duas instâncias de terminal para gerenciar os serviços separadamente:
-
-   ![Instâncias de Terminal](./glb-test-front/src/assets/Screenshot%202023-09-23%20114933.png)
-
-   Cada terminal será responsável por um serviço específico.
-
-4. Configure a API:
-
-   No terminal destinado à API (api), siga estas etapas:
+   Abra um novo terminal destinado à API (api), siga estas etapas:
 
    ```bash
    cd .\glb-test-back\
@@ -66,9 +54,9 @@ Antes de começar, certifique-se de que você tenha os seguintes pré-requisitos
    npm run dev
    ```
 
-5. Configure o Front-End:
+3. Configure o Front-End:
 
-   No terminal destinado ao front-end (front), siga estas etapas:
+   Abra um novo terminal destinado ao front-end (front), siga estas etapas:
 
    ```bash
    cd .\glb-test-front\
