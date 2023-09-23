@@ -6,20 +6,23 @@ module.exports = {
     password: process.env.MYSQL_PASSWORD,
     database: 'files_api',
     host: process.env.HOSTNAME,
-    dialect: 'postgres',
+    dialect: 'sqlite',
+    storage: 'database.db'
   },
   test: {
     username: process.env.MYSQL_USER,
     password: process.env.MYSQL_PASSWORD,
     database: 'files_api',
     host: process.env.HOSTNAME,
-    dialect: 'postgres',
+    dialect: 'sqlite',
+    storage: 'database.db'
   },
   production: {
     username: process.env.MYSQL_USER,
     password: process.env.MYSQL_PASSWORD,
     database: 'files_api',
     host: process.env.HOSTNAME,
-    dialect: 'postgres',
+    dialect: 'sqlite',
+    storage: 'database.db'
   },
 };

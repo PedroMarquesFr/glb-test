@@ -3,7 +3,7 @@
 O **GLB Manager** é uma aplicação web que permite aos usuários gerenciar e visualizar arquivos GLB (GL Transmission Format Binary). Ele é composto por dois componentes principais: o front-end (desenvolvido com React, Vite e TypeScript) e o back-end (construído com Node.js, Sequelize, Express e MSC). Este repositório contém o código-fonte de ambos os componentes, bem como um arquivo `docker-compose` para a criação de um container de banco de dados.
 
 ## Demonstração do Projeto
-
+![Demonstração do Projeto](./glb-test-front/src/assets/Screenshot%202023-09-22%20174720.png)
 ![Demonstração do Projeto](./glb-test-front/src/assets/Screenshot%202023-09-22%20174720.png)
 ![Demonstração do Projeto](./glb-test-front/src/assets/Screenshot%202023-09-22%201748322.png)
 
@@ -34,7 +34,6 @@ O **GLB Manager** oferece os seguintes recursos:
 Antes de começar, certifique-se de que você tenha os seguintes pré-requisitos instalados:
 
 - Node.js: Você pode instalá-lo em [nodejs.org](https://nodejs.org/).
-- Docker: Certifique-se de que o Docker esteja instalado em [docker.com](https://www.docker.com/products/docker-desktop/) e que o **docker daemon** esteja rodando.
 
 ### Instruções de Instalação
 
@@ -50,32 +49,24 @@ Antes de começar, certifique-se de que você tenha os seguintes pré-requisitos
    code .
    ```
 
-3. No VSCode, abra três instâncias de terminal para gerenciar os serviços separadamente:
+3. No VSCode, abra duas instâncias de terminal para gerenciar os serviços separadamente:
 
    ![Instâncias de Terminal](./glb-test-front/src/assets/Screenshot%202023-09-23%20114933.png)
 
    Cada terminal será responsável por um serviço específico.
 
-4. Configure o container do banco de dados:
-
-   No terminal destinado ao banco de dados (db), execute o seguinte comando:
-
-   ```bash
-   docker-compose up
-   ```
-
-5. Configure a API:
+4. Configure a API:
 
    No terminal destinado à API (api), siga estas etapas:
 
    ```bash
    cd .\glb-test-back\
    npm i
-   npm run migrate
-   npm run debug
+   npm run migration
+   npm run dev
    ```
 
-6. Configure o Front-End:
+5. Configure o Front-End:
 
    No terminal destinado ao front-end (front), siga estas etapas:
 
@@ -92,10 +83,10 @@ Isso deve configurar o ambiente local para executar o **GLB Manager**. Certifiqu
 O projeto é inicializado sem usuários, portanto, você deve criar uma conta clicando no botão "Register" (Registrar).
 
 ### Front-end
-O componente de front-end do **GLB Manager** é responsável pela interface de usuário da aplicação. É desenvolvido usando tecnologias como React, Vite, TypeScript, Tailwind e outras. Usei padrões de **Clean Code** e SOLID no desenvolvimento.
+O componente de front-end do **GLB Manager** é responsável pela interface de usuário da aplicação. É desenvolvido usando tecnologias como React, Vite, TypeScript, Tailwind e outras. Usei padrões de **Clean Code** e **SOLID** no desenvolvimento.
 
 ### Back-end
-O componente de back-end do **GLB Manager** é uma **RESTFull API** responsável pelo gerenciamento de dados e pela lógica de negócios da aplicação. É desenvolvido usando tecnologias como Node.js, Sequelize, Express e outras. Se trata de uma arquitetura simples (MSC) de fácil compreenção e auto explicativa, usei padrôes de **clean code** no desenvolvimento.
+O componente de back-end do **GLB Manager** é uma **RESTFull API** responsável pelo gerenciamento de dados e pela lógica de negócios da aplicação. É desenvolvido usando tecnologias como Node.js, Sequelize, Express e outras. Se trata de uma arquitetura simples (MSC) de fácil compreenção e auto explicativa, usei padrôes de **Clean Code** no desenvolvimento.
 
 ## Contato
 
