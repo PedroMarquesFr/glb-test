@@ -18,7 +18,7 @@
     "uuid": "^9.0.1"
   },
   "scripts": {
-    "migration": "npx sequelize-cli db:migrate $",
+    "migration": "npx sequelize-cli db:migrate $ && npx sequelize-cli db:seed:all $",
     "start": "node index.js",
     "drop": "npx sequelize-cli db:drop $",
     "seed": "npx sequelize-cli db:seed:all $",
