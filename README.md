@@ -3,7 +3,7 @@
 O **GLB Manager** é uma aplicação web que permite aos usuários gerenciar e visualizar arquivos GLB (GL Transmission Format Binary). Ele é composto por dois componentes principais: o front-end (desenvolvido com React, Vite e TypeScript) e o back-end (construído com Node.js, Sequelize, Express e MSC). Este repositório contém o código-fonte de ambos os componentes, bem como um arquivo `docker-compose` para a criação de um container de banco de dados.
 
 ## Demonstração do Projeto
-![Demonstração do Projeto](./glb-test-front/src/assets/Screenshot%202023-09-22%20174720.png)
+![Demonstração do Projeto](./glb-test-front/src/assets/Screenshot%202023-09-23%20160806.png)
 ![Demonstração do Projeto](./glb-test-front/src/assets/Screenshot%202023-09-22%20174720.png)
 ![Demonstração do Projeto](./glb-test-front/src/assets/Screenshot%202023-09-22%201748322.png)
 
