@@ -1,8 +1,9 @@
 # GLB Manager
 
-O **GLB Manager** é uma aplicação web que permite aos usuários gerenciar e visualizar arquivos GLB (GL Transmission Format Binary). Ela é composta por dois componentes principais: o front-end (desenvolvido com React, Vite e TypeScript) e o back-end (construído com Node.js, Sequelize, Express e MSC). Este repositório contém o código-fonte de ambos os componentes, além de um arquivo `docker-compose` para a criação de um container de banco de dados.
+O **GLB Manager** é uma aplicação web que permite aos usuários gerenciar e visualizar arquivos GLB (GL Transmission Format Binary). Ele é composto por dois componentes principais: o front-end (desenvolvido com React, Vite e TypeScript) e o back-end (construído com Node.js, Sequelize, Express e MSC). Este repositório contém o código-fonte de ambos os componentes, bem como um arquivo `docker-compose` para a criação de um container de banco de dados.
 
-![Demonstração do Projeto](./glb-test-front/src/assets/Screenshot%202023-09-22%20174230.png)
+## Demonstração do Projeto
+
 ![Demonstração do Projeto](./glb-test-front/src/assets/Screenshot%202023-09-22%20174720.png)
 ![Demonstração do Projeto](./glb-test-front/src/assets/Screenshot%202023-09-22%201748322.png)
 
@@ -15,8 +16,7 @@ O **GLB Manager** é uma aplicação web que permite aos usuários gerenciar e v
 - [Uso](#uso)
 - [Front-end](#front-end)
 - [Back-end](#back-end)
-- [Contribuições](#contribuições)
-- [Licença](#licença)
+- [Contato](#contato)
 
 ## Recursos
 
@@ -86,4 +86,17 @@ Antes de começar, certifique-se de que você tenha os seguintes pré-requisitos
    ```
 
 Isso deve configurar o ambiente local para executar o **GLB Manager**. Certifique-se de que todos os pré-requisitos estejam satisfeitos e siga as instruções cuidadosamente para garantir uma implantação bem-sucedida do projeto.
-Caso tenho tido algum problema na instalação pode me mandar uma mensagem pelo [linkedin](https://www.linkedin.com/in/pedro-marques-4a8609182/), responderei rapidamente.
+
+### Uso
+
+O projeto é inicializado sem usuários, portanto, você deve criar uma conta clicando no botão "Register" (Registrar).
+
+### Front-end
+O componente de front-end do **GLB Manager** é responsável pela interface de usuário da aplicação. É desenvolvido usando tecnologias como React, Vite, TypeScript, Tailwind e outras. Usei padrões de **Clean Code** e SOLID no desenvolvimento.
+
+### Back-end
+O componente de back-end do **GLB Manager** é uma **RESTFull API** responsável pelo gerenciamento de dados e pela lógica de negócios da aplicação. É desenvolvido usando tecnologias como Node.js, Sequelize, Express e outras. Se trata de uma arquitetura simples (MSC) de fácil compreenção e auto explicativa, usei padrôes de **clean code** no desenvolvimento.
+
+## Contato
+
+Se você encontrar algum problema durante a instalação ou tiver perguntas adicionais, sinta-se à vontade para entrar em contato pelo [LinkedIn](https://www.linkedin.com/in/pedro-marques-4a8609182/). Estou disponível para ajudar e responder rapidamente.
