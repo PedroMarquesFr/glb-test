@@ -1,16 +1,17 @@
 # GLB Manager
 
-GLB Manager é uma aplicação web que permite aos usuários gerenciar e visualizar arquivos GLB (GL Transmission Format Binary). Ela é composta por dois componentes principais: o front-end (React, Vite, Typescript) e o back-end (Node, Sequelize, Express, MSC). Este repositório contém o código para ambos os componentes alem de um docker-compose para a criacao do container do banco de dados.
-![project demonstration](./glb-test-front/src/assets/Screenshot%202023-09-22%20174230.png)
-![project demonstration](./glb-test-front/src/assets/Screenshot%202023-09-22%20174720.png)
-![project demonstration](./glb-test-front/src/assets/Screenshot%202023-09-22%201748322.png)
+O **GLB Manager** é uma aplicação web que permite aos usuários gerenciar e visualizar arquivos GLB (GL Transmission Format Binary). Ela é composta por dois componentes principais: o front-end (desenvolvido com React, Vite e TypeScript) e o back-end (construído com Node.js, Sequelize, Express e MSC). Este repositório contém o código-fonte de ambos os componentes, além de um arquivo `docker-compose` para a criação de um container de banco de dados.
+
+![Demonstração do Projeto](./glb-test-front/src/assets/Screenshot%202023-09-22%20174230.png)
+![Demonstração do Projeto](./glb-test-front/src/assets/Screenshot%202023-09-22%20174720.png)
+![Demonstração do Projeto](./glb-test-front/src/assets/Screenshot%202023-09-22%201748322.png)
 
 ## Tabela de Conteúdos
 
 - [Recursos](#recursos)
-- [Como Rodar o projeto local](#Como-rodar-o-projeto-local)
+- [Como Rodar o Projeto Localmente](#como-rodar-o-projeto-localmente)
   - [Pré-requisitos](#pré-requisitos)
-  - [Instalação](#instalação)
+  - [Instruções de Instalação](#instruções-de-instalação)
 - [Uso](#uso)
 - [Front-end](#front-end)
 - [Back-end](#back-end)
@@ -19,74 +20,70 @@ GLB Manager é uma aplicação web que permite aos usuários gerenciar e visuali
 
 ## Recursos
 
-- Carregar e gerenciar arquivos GLB.
-- Visualizar e interagir com arquivos GLB.
-- Autenticação de usuário.
+O **GLB Manager** oferece os seguintes recursos:
+
+- Carregamento e gerenciamento de arquivos GLB.
+- Visualização e interação com arquivos GLB.
+- Autenticação de usuário para segurança.
 - Armazenamento seguro de arquivos GLB.
 
-## Como Rodar o projeto local
+## Como Rodar o Projeto Localmente
 
 ### Pré-requisitos
 
-Antes de começar, certifique-se de que atende aos seguintes requisitos:
+Antes de começar, certifique-se de que você tenha os seguintes pré-requisitos instalados:
 
-- Node.js: Instale o Node.js em [nodejs.org](https://nodejs.org/).
-- Docker: Instale o Docker em [docker.com](https://www.docker.com/products/docker-desktop/).
+- Node.js: Você pode instalá-lo em [nodejs.org](https://nodejs.org/).
+- Docker: Certifique-se de que o Docker esteja instalado em [docker.com](https://www.docker.com/products/docker-desktop/) e que o **docker daemon** esteja rodando.
 
-### Instalação
+### Instruções de Instalação
 
-1. Clone o repositório:
+1. Clone este repositório:
 
    ```bash
    git clone https://github.com/seu-nome-de-usuario/GLB-Manager.git
    ```
 
-2. Abra o VSCode:
-   - voce pode fazer isso enmtrando noa pasta do projeto abrindo um terminal de digitando:
+2. Abra o Visual Studio Code (VSCode) no diretório do projeto:
+
    ```bash
    code .
    ```
-3. No VScode crie três instancias de terminal, desta forma:
-   ![project demonstration](./glb-test-front/src/assets/Screenshot%202023-09-23%20114933.png)
 
-- Cada terminal sera responsavel por um servico
+3. No VSCode, abra três instâncias de terminal para gerenciar os serviços separadamente:
+
+   ![Instâncias de Terminal](./glb-test-front/src/assets/Screenshot%202023-09-23%20114933.png)
+
+   Cada terminal será responsável por um serviço específico.
 
 4. Configure o container do banco de dados:
 
-- no terminal destinado ao banco de dados (db), rode o seguinte comando
-  ```bash
-  docker-compose up
-  ```
+   No terminal destinado ao banco de dados (db), execute o seguinte comando:
 
-4. Configure a API:
+   ```bash
+   docker-compose up
+   ```
 
-- no terminal destinado ao api (api), rode os seguintes comandos
+5. Configure a API:
 
-  ```bash
-  cd .\glb-test-back\
-  ```
+   No terminal destinado à API (api), siga estas etapas:
 
-  ```bash
-  npm i
-  ```
+   ```bash
+   cd .\glb-test-back\
+   npm i
+   npm run migrate
+   npm run debug
+   ```
 
-  ```bash
-  npm run migrate
-  ```
+6. Configure o Front-End:
 
-  ```bash
-  npm run debug
-  ```
+   No terminal destinado ao front-end (front), siga estas etapas:
 
-  5. Configure a Front-End:
+   ```bash
+   cd .\glb-test-front\
+   npm i
+   npm run dev
+   ```
 
-- no terminal destinado ao frontend (front), rode os seguintes comandos
-  ```bash
-  cd .\glb-test-front\
-  ```
-  ```bash
-  npm i
-  ```
-  ```bash
-  npm run dev
-  ```
+Isso deve configurar o ambiente local para executar o **GLB Manager**. Certifique-se de que todos os pré-requisitos estejam satisfeitos e siga as instruções cuidadosamente para garantir uma implantação bem-sucedida do projeto.
+Caso tenho tido algum problema na instalação pode me mandar uma mensagem pelo [linkedin](https://www.linkedin.com/in/pedro-marques-4a8609182/), responderei rapidamente.
