@@ -1,15 +1,20 @@
 const postService = require('../services/postService');
-const uploadFileMiddleware = require("../middlewares/upload");
+const uploadFileMiddleware = require('../middlewares/upload');
 
 const newPost = async (req, res) => {
-  console.log("CHEGOU")
+  console.log('CHEGOU');
   const { id } = req.user;
-  const {originalname: name, size, filename: key } = req.file
+  const { originalname: name, size, filename: key } = req.file;
   const postOrError = await postService.newPost(id, name, size, key);
   res.status(postOrError.message ? postOrError.code : 201).json(postOrError);
 };
 
 const getPosts = async (req, res) => {
+  const { id } = req.user;
+  const allPosts = await postService.getPosts(id);
+  res.status(allPosts.message ? allPosts.code : 200).json(allPosts);
+};
+const getPostsByUser = async (req, res) => {
   const { id } = req.user;
   const allPosts = await postService.getPostsByUser(id);
   res.status(allPosts.message ? allPosts.code : 200).json(allPosts);
@@ -42,4 +47,12 @@ const deletePost = async (req, res) => {
   res.status(postsDeleted.message ? postsDeleted.code : 204).json(postsDeleted);
 };
 
-module.exports = { newPost, getPosts, getPost, editPost, serachPostByTerm, deletePost };
+module.exports = {
+  newPost,
+  getPosts,
+  getPost,
+  getPostsByUser,
+  editPost,
+  serachPostByTerm,
+  deletePost,
+};

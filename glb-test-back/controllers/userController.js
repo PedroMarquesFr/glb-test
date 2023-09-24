@@ -2,10 +2,12 @@ const userService = require('../services/userService');
 
 const newUser = async (req, res) => {
   const { displayName, email, password } = req.body;
+  const defaultRoleId = 1;
   const tokenOrError = await userService.newUser(
     displayName,
     email,
     password,
+    defaultRoleId
   );
   res.status(tokenOrError.message ? tokenOrError.code : 201).json(tokenOrError);
 };

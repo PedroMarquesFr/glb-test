@@ -1,7 +1,8 @@
 type User = {
-  id: number;
-  displayName: string;
-  email: string;
+  id?: number;
+  displayName?: string;
+  email?: string;
+  roleId?: number;
 };
 type GLBFile = {
   id: number;

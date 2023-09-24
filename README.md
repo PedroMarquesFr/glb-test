@@ -24,7 +24,7 @@ O **GLB Manager** oferece os seguintes recursos:
 
 - Carregamento e gerenciamento de arquivos GLB.
 - Visualização e upload de arquivos GLB.
-- Autenticação de usuário para segurança.
+- Autenticação e **Autorização** de usuário para segurança.
 - Armazenamento seguro de arquivos GLB.
 
 ## Como Rodar o Projeto Localmente
@@ -66,7 +66,9 @@ Isso deve configurar o ambiente local para executar o **GLB Manager**. Certifiqu
 
 ### Uso
 
-O projeto é inicializado sem usuários, portanto, você deve criar uma conta clicando no botão "Register" (Registrar).
+O projeto é inicializado (banco populado - seed) com um usuário do tipo admin, que tem acesso a todos os arquivos glb de todos os usuários criados, os demais usuários sempre terão acesso semente a seus próprios arquivos.
+Acesso a conta de admin - email: admin@amdin.com, password:admin100
+Você pode cadastrar novos usuários clicando no botão register
 
 ### Front-end
 O componente de front-end do **GLB Manager** é responsável pela interface de usuário da aplicação. Desenvolvi usando tecnologias como React, Vite, TypeScript, Tailwind e outras. Usei padrões de **Clean Code** e **SOLID** para escalabilidade no desenvolvimento e conceitos de **UX design** e **UX writing** para tornar o sistema mais acessível e agradável para o usuário final.

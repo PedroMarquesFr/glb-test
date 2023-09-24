@@ -7,6 +7,13 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
+      roleId: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'Roles',
+          key: 'id',
+        },
+      },
       displayName: {
         allowNull: false,
         type: Sequelize.STRING,
