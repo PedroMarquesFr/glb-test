@@ -2,17 +2,21 @@ const jwt = require('jsonwebtoken');
 const userService = require('../services/userService');
 
 const segredo = 'senhasecretashiii';
+const role = {
+  admin: 2,
+  person: 1,
+};
 
 module.exports = (requireAdmin) => {
   return async (req, res, next) => {
     const token = req.headers.authorization;
-    if (!token) return res.status(401).json({ message: 'Token não encontrado' });
+    if (!token) return res.status(401).json({ message: 'Token not found' });
     try {
       const decoded = jwt.verify(token, segredo);
-      console.log(decoded)
-      if (requireAdmin && decoded.data.role !== 'admin') {
-        return res.status(403).json({
-          message: 'Only admins can register new admins',
+      console.log(decoded, decoded.data.role, role.admin);
+      if (requireAdmin && decoded.data.role !== role.admin) {
+        return res.status(401).json({
+          message: 'You have no permission to do this action',
         });
       }
       const user = await userService.checkUserByEmail(decoded.data.email);

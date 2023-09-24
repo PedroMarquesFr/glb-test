@@ -14,19 +14,19 @@ const validateCamps = (displayName, email, password) => {
   return { ok: 'ok' };
 };
 
-const newUser = async (displayName, email, password) => {
+const newUser = async (displayName, email, password, roleId) => {
   const isValid = validateCamps(displayName, email, password);
   if (!isValid.ok) return isValid;
   try {
     const [user, created] = await Users.findOrCreate({
       where: { email },
-      defaults: { displayName, email, password },
+      defaults: { displayName, email, password, roleId },
     });
     const { id } = user;
 
     if (!created) return errMessage('Usuário já existe', 409);
 
-    const token = createNewToken(id, email, password, displayName);
+    const token = createNewToken(id, email, password, displayName, roleId);
     return { token };
   } catch (error) {
     console.error(error);
