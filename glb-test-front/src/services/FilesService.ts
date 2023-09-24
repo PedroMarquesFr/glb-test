@@ -1,7 +1,7 @@
 // AuthService.ts
 
-import { AxiosResponse, AxiosError } from "axios";
-import api, { ApiResponse } from "./api";
+import { AxiosResponse } from "axios";
+import api from "./api";
 
 class FilesService {
   static async uploadPost(token: string, file: File): Promise<GLBFile[]> {
@@ -22,6 +22,14 @@ class FilesService {
   }
   static async fetchPosts(token: string): Promise<GLBFile[]> {
     const response: AxiosResponse<GLBFile[]> = await api.get("/post", {
+      headers: {
+        authorization: token,
+      },
+    });
+    return response.data;
+  }
+  static async fetchPostsByUser(token: string): Promise<GLBFile[]> {
+    const response: AxiosResponse<GLBFile[]> = await api.get("/post/user", {
       headers: {
         authorization: token,
       },

@@ -13,10 +13,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { toast } from "@/components/ui/use-toast";
 import { useNavigate } from "react-router-dom";
-import AuthService from "@/services/AuthService";
-import CookieService, { Person } from "@/services/CookieService";
 import { useUserContext } from "@/contexts/UserContext";
 import { LogIn, UserPlus } from "lucide-react";
 

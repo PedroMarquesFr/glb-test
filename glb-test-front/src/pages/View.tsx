@@ -1,7 +1,7 @@
 import Header from "@/components/Header";
 import { useFileContext } from "@/contexts/FileContext";
 import React from "react";
-import { Routes, Route, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 const FileInfo: React.FC<{ title: string; value: string | undefined }> = (
   props
