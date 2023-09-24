@@ -73,6 +73,7 @@ O componente de front-end do **GLB Manager** é responsável pela interface de u
 
 ### Back-end
 O componente de back-end do **GLB Manager** é uma **RESTFull API** responsável pelo gerenciamento de dados e pela lógica de negócios da aplicação. Desenvolvi usando tecnologias como Node.js, Sequelize, Express e outras. Se trata de uma arquitetura simples (MSC) de fácil compreenção e auto explicativa, usei padrões de **Clean Code** no desenvolvimento.
+Estruturei o banco e dadso pensando em futuras integrações com serviçoe de nuvem como aws s3 ou azure blob
 
 ## Contato
 
