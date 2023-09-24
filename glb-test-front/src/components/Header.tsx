@@ -7,7 +7,6 @@ import {
   MenubarTrigger,
 } from "@/components/ui/menubar";
 import { User, LogOut } from "lucide-react";
-import CookieService from "@/services/CookieService";
 import { useNavigate } from "react-router-dom";
 import { useUserContext } from "@/contexts/UserContext";
 import { Sticker } from "lucide-react";
