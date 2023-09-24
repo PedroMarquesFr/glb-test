@@ -2,30 +2,17 @@ const jwt = require('jsonwebtoken');
 
 const secret = 'senhasecretashiii';
 
-const createNewTokenRegister = (id, email, displayName) => {
+const createNewToken = (id, email, password, displayName, role) => {
   const jwtConfig = {
     expiresIn: '23h',
     algorithm: 'HS256',
   };
   const token = jwt.sign(
-    { data: { email, id, displayName } },
+    { data: { email, password, id, displayName, role } },
     secret,
     jwtConfig,
   );
   return token;
 };
 
-const createNewTokenLogin = (email, password, id) => {
-  const jwtConfig = {
-    expiresIn: '23h',
-    algorithm: 'HS256',
-  };
-  const token = jwt.sign(
-    { data: { email, password, id } },
-    secret,
-    jwtConfig,
-  );
-  return token;
-};
-
-module.exports = { createNewTokenRegister, createNewTokenLogin };
+module.exports = { createNewToken };

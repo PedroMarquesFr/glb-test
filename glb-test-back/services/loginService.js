@@ -1,4 +1,4 @@
-const { createNewTokenLogin } = require('./createNewToken');
+const { createNewToken } = require('./createNewToken');
 const { Users } = require('../models');
 const errMessage = require('./errMessage');
 
@@ -24,7 +24,7 @@ const newLogin = async (email, password) => {
   const isAutheticityValid = validateCampsAutheticity(password, doesUserExists);
   if (!isAutheticityValid.ok) return errMessage('Password is incorrect', 400);
 
-  const token = createNewTokenLogin(email, password, doesUserExists.dataValues.id);
+  const token = createNewToken(doesUserExists.dataValues.id, email, password, doesUserExists.dataValues.role);
   doesUserExists.password = undefined
   return { token, user: doesUserExists };
 };

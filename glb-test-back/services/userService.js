@@ -1,6 +1,6 @@
 const { Users } = require('../models');
 const errMessage = require('./errMessage');
-const { createNewTokenRegister } = require('./createNewToken');
+const { createNewToken } = require('./createNewToken');
 
 const validateCamps = (displayName, email, password) => {
   const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
@@ -26,7 +26,7 @@ const newUser = async (displayName, email, password) => {
 
     if (!created) return errMessage('Usuário já existe', 409);
 
-    const token = createNewTokenRegister(id, email, displayName);
+    const token = createNewToken(id, email, password, displayName);
     return { token };
   } catch (error) {
     console.error(error);

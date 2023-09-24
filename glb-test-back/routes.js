@@ -22,7 +22,7 @@ router.put('/post/:id', validateJWT(false), postController.editPost);
 router.delete('/post/:id', validateJWT(false), postController.deletePost);
 router.get('/post/view/:filename', (req, res) => {
   const filename = req.params.filename; // Get the filename from the URL parameter
-  res.render('model_viewer', { filename }); // Render the EJS template
+  res.render('model_viewer', { filename }); // Render the EJS template dynamically
 });
 
 module.exports = router;
