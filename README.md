@@ -69,10 +69,11 @@ Isso deve configurar o ambiente local para executar o **GLB Manager**. Certifiqu
 O projeto é inicializado sem usuários, portanto, você deve criar uma conta clicando no botão "Register" (Registrar).
 
 ### Front-end
-O componente de front-end do **GLB Manager** é responsável pela interface de usuário da aplicação. Desenvolvi usando tecnologias como React, Vite, TypeScript, Tailwind e outras. Usei padrões de **Clean Code** e **SOLID** no desenvolvimento.
+O componente de front-end do **GLB Manager** é responsável pela interface de usuário da aplicação. Desenvolvi usando tecnologias como React, Vite, TypeScript, Tailwind e outras. Usei padrões de **Clean Code** e **SOLID** para escalabilidade no desenvolvimento e conceitos de **UX design** e **UX writing** para tornar o sistema mais acessível e agradável para o usuário final.
 
 ### Back-end
 O componente de back-end do **GLB Manager** é uma **RESTFull API** responsável pelo gerenciamento de dados e pela lógica de negócios da aplicação. Desenvolvi usando tecnologias como Node.js, Sequelize, Express e outras. Se trata de uma arquitetura simples (MSC) de fácil compreenção e auto explicativa, usei padrões de **Clean Code** no desenvolvimento.
+Estruturei o banco e dadso pensando em futuras integrações com serviçoe de nuvem como aws s3 ou azure blob
 
 ## Contato
 
