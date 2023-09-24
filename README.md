@@ -23,7 +23,7 @@ O **GLB Manager** é uma aplicação web que permite aos usuários gerenciar e v
 O **GLB Manager** oferece os seguintes recursos:
 
 - Carregamento e gerenciamento de arquivos GLB.
-- Visualização e interação com arquivos GLB.
+- Visualização e upload de arquivos GLB.
 - Autenticação de usuário para segurança.
 - Armazenamento seguro de arquivos GLB.
 
