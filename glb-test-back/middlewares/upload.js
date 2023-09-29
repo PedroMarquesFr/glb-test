@@ -17,7 +17,6 @@ let storage = multer.diskStorage({
 
 // Filter to accept only GLB files
 const fileFilter = (req, file, cb) => {
-  console.log('ASDKJASDASDM,H', file);
   if (
     (file.mimetype === 'model/gltf-binary' ||
       file.mimetype === 'application/octet-stream') &&
