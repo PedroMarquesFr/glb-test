@@ -2,10 +2,10 @@ const postService = require('../services/postService');
 const uploadFileMiddleware = require('../middlewares/upload');
 
 const newPost = async (req, res) => {
-  console.log('CHEGOU');
+  console.log('CHEGOU', req.file);
   const { id } = req.user;
-  const { originalname: name, size, filename: key } = req.file;
-  const postOrError = await postService.newPost(id, name, size, key);
+  const { originalname: name, size, key, location: url } = req.file;
+  const postOrError = await postService.newPost(id, name, size, key, url);
   res.status(postOrError.message ? postOrError.code : 201).json(postOrError);
 };
 

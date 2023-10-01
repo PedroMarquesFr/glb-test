@@ -9,7 +9,8 @@ const validateCamps = (name, size, key) => {
   return { ok: 'ok' };
 };
 
-const newPost = async (userId, name, size, key) => {
+const newPost = async (userId, name, size, key, url) => {
+  console.log(":)", url)
   const areCampsValid = validateCamps(name, size, key);
   if (areCampsValid.message) return areCampsValid;
   try {
@@ -17,7 +18,8 @@ const newPost = async (userId, name, size, key) => {
       name,
       size,
       key,
-      url: `http://localhost:${process.env.PORT}/post/view/${key}`,
+      url,
+      // url: `http://localhost:${process.env.PORT}/post/view/${key}`,
       userId,
     });
     return wasCreated;
